@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Greetings</title>
+    <meta charset="UTF-8">
+    <script src="jquery.min.js"></script>
+    <script src="sockjs-0.3.4.min.js"></script>
+    <script src="vertxbus.js"></script>
+</head>
+<body>
+<script>
+    var eb = new vertx.EventBus("/eventbus");
+    eb.onopen = function () {
+        eb.registerHandler("greetings", function (msg) {
+            $('#greetings').append("<p>" + msg + "</p>");
+        });
+    };
+</script>
+<div id="greetings"></div>
+</body>
+</html>
