@@ -3,23 +3,25 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 
-public class MongoPersistor extends AbstractVerticle {
+import static java.lang.System.out;
+
+public class TeamLead extends AbstractVerticle {
 
     MongoClient mongo;
 
     @Override
     public void start() throws Exception {
         mongo = MongoClient.createShared(vertx, new JsonObject().put("db_name", "joker2015demo"));
-        vertx.eventBus().consumer("greetings", this::persistGreeting);
+        vertx.eventBus().consumer("topic.greetings", this::persistGreeting);
     }
 
     private void persistGreeting(Message<JsonObject> msg) {
         JsonObject greeting = msg.body();
         mongo.insert("greetings", greeting, res -> {
             if (res.succeeded()) {
-                System.out.println(msg.body().getInteger("counter") + " persisted successfully");
+                out.println("teamlead persisted, counter:" + msg.body().getInteger("counter"));
             } else {
-                System.out.println(res.cause().getMessage());
+                out.println(res.cause().getMessage());
             }
         });
     }

@@ -4,9 +4,9 @@ var SockJSHandler = require("vertx-web-js/sock_js_handler");
 var StaticHandler = require("vertx-web-js/static_handler");
 
 var options = {
-    "outboundPermitteds" : [
+    "outboundPermitteds": [
         {
-            "address" : "greetings"
+            "address": "topic.greetings"
         }
     ]
 };
