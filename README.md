@@ -1,2 +1,2 @@
 # joker2015demo
-Simple examples with vert.x to demonsrate on Joker 2015
+Simple examples of vert.x usage to demonsrate on Joker 2015
