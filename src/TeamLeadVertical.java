@@ -5,7 +5,7 @@ import io.vertx.ext.mongo.MongoClient;
 
 import static java.lang.System.out;
 
-public class TeamLead extends AbstractVerticle {
+public class TeamLeadVertical extends AbstractVerticle {
 
     MongoClient mongo;
 
