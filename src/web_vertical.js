@@ -7,7 +7,7 @@ var router = Router.router(vertx);
 router.route("/eventbus/*").handler(
     SockJSHandler.create(vertx).bridge({
         "outboundPermitteds": [
-            {"address": "topic.greetings"}
+            {"address": "greetings"}
         ]
     }).handle);
 router.route().handler(StaticHandler.create().handle);

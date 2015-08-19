@@ -1,6 +1,6 @@
 eb = $vertx.event_bus()
 
-eb.consumer("topic.greetings") { |message|
+eb.consumer("greetings") { |message|
   puts "junior recieves: #{message.body()}"
   message.reply("Thanks!")
 }

@@ -13,7 +13,7 @@ public class TeamLeadVertical extends AbstractVerticle {
     public void start() throws Exception {
         mongo = MongoClient.createShared(vertx,
                 new JsonObject().put("db_name", "joker2015demo"));
-        vertx.eventBus().consumer("topic.greetings", this::persistGreeting);
+        vertx.eventBus().consumer("greetings", this::persistGreeting);
     }
 
     private void persistGreeting(Message<JsonObject> msg) {

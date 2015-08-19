@@ -5,10 +5,10 @@ i = 1;
 vertx.setPeriodic(5000, { v ->
     def map = [
             "from"    : "Senior",
-            "greeting": "Happy birthday!",
+            "greeting": "Happy birthday, junior!",
             "counter" : i++
     ]
     def json = new JsonObject(map)
     println "senior sends: " + json
-    eb.publish("topic.greetings", json)
+    eb.publish("greetings", json)
 })
