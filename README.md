@@ -1,2 +1,2 @@
 # joker2015demo
-Simple examples of vert.x usage to demonsrate on Joker 2015
+Simple example of vert.x usage to demonstrate during Joker 2015
