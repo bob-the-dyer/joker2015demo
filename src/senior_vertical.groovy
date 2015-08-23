@@ -12,3 +12,4 @@ vertx.setPeriodic(5000, { v ->
     println "senior sends: " + json
     eb.publish("greetings", json)
 })
+println "senior is running"

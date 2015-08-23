@@ -14,6 +14,7 @@ public class TeamLeadVertical extends AbstractVerticle {
         mongo = MongoClient.createShared(vertx,
                 new JsonObject().put("db_name", "joker2015demo"));
         vertx.eventBus().consumer("greetings", this::persistGreeting);
+        out.println("teamlead is running");
     }
 
     private void persistGreeting(Message<JsonObject> msg) {
