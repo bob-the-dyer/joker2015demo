@@ -1,7 +1,7 @@
 eb = $vertx.event_bus()
 
 eb.consumer("greetings") { |message|
-  puts "junior recieves: #{message.body()}"
+  puts "junior receives: #{message.body()}"
   message.reply("Thanks!")
 }
 
